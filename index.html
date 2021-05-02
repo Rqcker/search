@@ -5,7 +5,7 @@
     <!--begin seo-->
     <meta name="copyright" content="©️ 2021 Junhao GPLv3.0">
     <meta name="author" content="Junhao" />
-    <title>Junhao Search - A homepage for the world</title>
+    <title>Junhao Search Homepage</title>
     <meta name="keywords" content="Junhao,Junhao's Blog,aggregator,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航">
     <meta name="description" content="Junhao Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
     <!-- / FB Open Graph -->
@@ -441,11 +441,6 @@
 
     </div>
     <!-- Sidebar end -->
-    <!--和风天气插件-->
-    <div class="mywth" style="width: 320px;">
-        <div id="he-plugin-simple"></div> <script async>WIDGET = {CONFIG:{"modules":"01234","background":5,"tmpColor":"4A4A4A","tmpSize":"12","cityColor":"4A4A4A","citySize":"12","aqiSize":"12","weatherIconSize":"16","alertIconSize":"14","padding":"0px 5px 5px 0px","shadow":"1","language":"auto","borderRadius":5,"fixed":"false","vertical":"middle","horizontal":"left","key":"5e9773d40306432e915cb9093c9f6369"}}</script> <script async src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
-    </div>
-    <!--和风天气插件-->
     <!--Search box and bookmarks end-->
     <div id="content">
         <div class="con">
@@ -463,24 +458,21 @@
                         <strong class="search-engine-tit">Select Search Engine</strong>
                     </div>
                     <ul class="search-engine-list">
-                         <li class="se-li" url="https://www.baidu.com/s" name="wd" img="static/icon/baidu.ico"><img src="static/icon/baidu.ico"></img>百度</li>
+                         <li class="se-li" url="https://www.baidu.com/s" name="wd" img="static/icon/baidu.ico"><img src="static/icon/baidu.ico"></img>Baidu</li>
                          <li class="se-li" url="https://www.google.com/search" name="q" img="static/icon/google_1.png"><img src="static/icon/google_1.png"></img>Google</li>
-                         <li class="se-li" url="https://cn.bing.com/search" name="q" img="static/icon/bing.ico"><img src="static/icon/bing.ico"></img>Bing CN</li>
-                         <li class="se-li" url="https://www.dogedoge.com/results" name="q" img="static/icon/doge_ico.png"><img src="static/icon/doge_ico.png"></img>多吉</li>
-                         <li class="se-li" url="https://mijisou.com" name="q" img="static/icon/mijisou.png"><img src="static/icon/mijisou.png"></img>秘迹</li>
-                         <li class="se-li" url="https://seeres.com/search" name="q" img="static/icon/seeres.png"><img src="static/icon/seeres.png"></img>seeres*</li>
+                         <li class="se-li" url="https://cn.bing.com/search" name="q" img="static/icon/bing.ico"><img src="static/icon/bing.ico"></img>Bing</li>
                     </ul>
                 </div>
                 <div class="quick-div">
                     <ul class="quick-ul">
-                        <li class="quick" data-s="bilibili" target="_blank" title="Holger's Blog">
-                            <a target=_blank href="https://blog.holger.net.cn">
+                        <li class="quick" data-s="bilibili" target="_blank" title="Junhao's Blog">
+                            <a target=_blank href="https://junhaosong.com">
                                 <i style="background-image: url(./static/images/avatar-300x300.webp);"></i>
                                 Blog
                             </a>
                         </li>
                         <li class="quick" data-s="github" target="_blank" title="SNS">
-                            <a target=_blank href="https://sns.holger.net.cn/">
+                            <a target=_blank href="https://junhaosong.com">
                                 <i style="background-image: url(https://sns.holger.net.cn/favicon.ico);"></i>
                                 SNS
                             </a>
@@ -524,28 +516,10 @@
             console.error(err);  
             })  
         </script>  
-        <!--今日诗词 placeholder copyright holger-->
-        <script>
-              jinrishici.load(function(result) {
-                var telecopy =  result.data.content;
-                var cursor = "|";
-                var teletype = document.getElementById("search_placeholder");
-                teletype.placeholder = cursor;  
-                var counter = 0;
-                var timer = setInterval(function(){
-                    teletype.placeholder = telecopy.substr(0, counter) + cursor;
-                        counter++;
-                        if(counter === telecopy.length + 1) {
-                            clearInterval(timer);
-                        }
-                    }, 100);
-                });
-        </script>
-        <!--今日诗词 placeholder end-->
         </div>
         <div class="foot">  
-           ©️ 2020 Minimalist Search by
-            <a href="https://blog.holger.net.cn/about/" target="_blank" ><b>Holger</b></a><p> v0.4-beta<pss><a href='http://i.holger.net.cn' target='_blank'> </a>&nbsp;&nbsp;<ping></ping></pss></p>
+           ©️ 2021 Junhao Search by
+            <a href="https://junhaosong.com" target="_blank" ><b>Junhao</b></a><p> v0.1-beta<pss><a href='http://junhaosong' target='_blank'> </a>&nbsp;&nbsp;<ping></ping></pss></p>
             <script async src="static/js/latency.js"></script>
             <script src="static/js/defocus.js"></script>
             <script async src="static/js/defocus.js"></script>
