@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<!--
-    Copyright 2020 Holger https://holger.net.cn Under GPLv3.0 @ https://github.com/holgerhuo/minimalist-search
--->
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <!--begin seo-->
-    <meta name="copyright" content="©️ 2020 Holger GPLv3.0">
-    <meta name="author" content="Holger" />
-    <title>Minimalist Search - A homepage for everyone</title>
-    <meta name="keywords" content="Holger,Holger's Blog,aggregator,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航">
-    <meta name="description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
+    <meta name="copyright" content="©️ 2021 Junhao GPLv3.0">
+    <meta name="author" content="Junhao" />
+    <title>Junhao Search - A homepage for the world</title>
+    <meta name="keywords" content="Junhao,Junhao's Blog,aggregator,index,homepage,start,开始界面,网站聚合,主页,网址大全,网址导航">
+    <meta name="description" content="Junhao Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
     <!-- / FB Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://i.holger.net.cn">
-    <meta property="og:title" content="Minimalist Search - A homepage for everyone">
-    <meta property="og:description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
+    <meta property="og:url" content="https://junhaosong.com/search">
+    <meta property="og:title" content="Junhao Search - A homepage for the world">
+    <meta property="og:description" content="Junhao Search - A clean, simple, comprehensive homepage for the world! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
     <meta property="og:image" content="./static/images/avatar.png">
-    <meta property="og:site_name" content="Minimalist Search - A homepage with all websites you want!">
+    <meta property="og:site_name" content="Junhao Search - A homepage with all websites.">
     <!-- / FB Open Graph end -->
     <!-- / Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Minimalist Search - A homepage for everyone">
-    <meta name="twitter:description" content="Minimalist Search - A clean, simple, comprehensive homepage for everyone! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
+    <meta name="twitter:title" content="Junhao Search - A homepage for the world">
+    <meta name="twitter:description" content="Junhao Search - A clean, simple, comprehensive homepage for the world! With all common sites hidden in sidebar, fully customized quick navigation, choose your favorite search engine, and dark-mode ready!">
     <meta name="twitter:image" content="./static/images/avatar.png">
     <!-- / Twitter Cards end -->
     <!--seo end-->
@@ -30,10 +27,9 @@
     <link rel="stylesheet" href="static/css/sou.css">
     <link id="daily-theme" rel="stylesheet" href="static/css/sou.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" data-original-media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
     <link id="dark-theme" rel="stylesheet" href="static/css/sou_night.css" media="(prefers-color-scheme: dark)" data-original-media="(prefers-color-scheme: dark)">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> <!--引用Google Fonts Josefin Sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> <!--use Google Fonts Josefin Sans-->
     <link rel="manifest" href="static/manifest.json">
     <script type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <!--load sw.js ©️holger-->
     <script async>
         'use strict';
         'serviceWorker' in navigator && navigator.serviceWorker.register('service-worker.js').then(function(a) {
@@ -84,10 +80,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="full-screen" content="yes"><!--UC强制全屏-->
-    <meta name="browsermode" content="application"><!--UC应用模式-->
-    <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
-    <meta name="x5-page-mode" content="app"><!--QQ应用模式-->
+    <meta name="full-screen" content="yes"><!--UC forced full screen-->
+    <meta name="browsermode" content="application"><!--UC application mode-->
+    <meta name="x5-fullscreen" content="true"><!--QQ forced full screen-->
+    <meta name="x5-page-mode" content="app"><!--QQ application mode-->
     <script src="static/js/jquery-3.4.1.min.js"></script>
     <script src="static/js/jQuery.rTabs.js"></script>
     <script src="static/js/js.cookie.js"></script>
@@ -104,7 +100,7 @@
             <img id="theme-switch-icon" src="static/icon/icon-light.svg" width="20" height="20" title="" aria-expanded="true">
         </a>
     </div>
-    <!-- 侧栏 -->
+    <!-- Sidebar -->
     <div id="menu"><i></i></div>
     <div class="side closed">
 
@@ -121,7 +117,7 @@
         <div class="tab-con">
 
             <div class="j-tab-con">
-                <!--书签-->
+                <!--Bookmarks-->
                 <div class="tab-con-item" style="display:block;">
 
                     <div class="list">
@@ -288,12 +284,12 @@
                     </div>
 
                 </div>
-                <!--书签 end-->
-                <!--设置-->
+                <!--Bookmarks end-->
+                <!--Settings-->
                 <div class="tab-con-item">
 
                     <div class="set">
-                        <!--搜索引擎设置-->
+                        <!--Search engine settings-->
                         <div class="set_blocks">
                             <div class="set_blocks_title">
                                 Search Engines
@@ -358,8 +354,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--搜索引擎设置 end-->
-                        <!--快捷方式设置-->
+                        <!--Search engine settings end-->
+                        <!--Shortcut settings-->
                         <div class="set_blocks">
                             <div class="set_blocks_title">
                                 Shortcuts
@@ -416,12 +412,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!--快捷方式设置 end-->
+                        <!--Shortcut settings end-->
                     </div>
 
                 </div>
-                <!--设置 end-->
-                <!--我的-->
+                <!--settings end-->
+                <!--Mine-->
                 <div class="tab-con-item">
 
                     <div class="me">
@@ -437,20 +433,20 @@
                         <button id="my_data_out">Export</button>
                     </div>
                 </div>
-                <!--我的 end-->
+                <!--Mine end-->
             </div>
 
         </div>
 
 
     </div>
-    <!-- 侧栏 end -->
+    <!-- Sidebar end -->
     <!--和风天气插件-->
     <div class="mywth" style="width: 320px;">
         <div id="he-plugin-simple"></div> <script async>WIDGET = {CONFIG:{"modules":"01234","background":5,"tmpColor":"4A4A4A","tmpSize":"12","cityColor":"4A4A4A","citySize":"12","aqiSize":"12","weatherIconSize":"16","alertIconSize":"14","padding":"0px 5px 5px 0px","shadow":"1","language":"auto","borderRadius":5,"fixed":"false","vertical":"middle","horizontal":"left","key":"5e9773d40306432e915cb9093c9f6369"}}</script> <script async src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
     </div>
     <!--和风天气插件-->
-    <!--搜索框和书签 end-->
+    <!--Search box and bookmarks end-->
     <div id="content">
         <div class="con">
            <div class="shlogo"></div>
@@ -556,21 +552,22 @@
         </div>
 <div style="display: none;"> <a href="https://live.holger.net.cn/never-say-goodbye/">never-say-goodbye</a> <a href="https://radio.holger.net.cn/">radio669</a> <a href="https://sns.holger.net.cn/">sns</a> <a href="https://sns.holger.net.cn/@holgerhuo">snsh</a> <a href="https://sns.holger.net.cn/@holgerhuo.rss">snshi</a> <a href="https://sns.holger.net.cn/@martincao">snsm</a> <a href="https://sns.holger.net.cn/@martincao.rss">snsmi</a> <a href="https://sns.holger.net.cn/@how">snsh</a> <a href="https://sns.holger.net.cn/@how.rss">snshi</a> <a href="https://sns.holger.net.cn/@psych_fb">snsp</a> <a href="https://sns.holger.net.cn/@psych_fb.rss">snspi</a> <a href="https://sns.holger.net.cn/@DeBruyneKev">snsh</a> <a href="https://sns.holger.net.cn/@DeBruyneKev.rss">snshi</a> <a href="https://i.holger.net.cn/">ms</a> <a href="https://blog.holger.net.cn/">blog</a> <a href="https://blog.holger.net.cn/sitemap.xml">blogi</a> <a href="https://rss.holger.net.cn/">rss</a> <a href="https://git.holger.net.cn/">git</a> </div>
     </div>
-    <!--搜索框和书签 end-->
+    <!--Search box and bookmarks end-->
 
 <!--
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
+Author: D. Young
+Homepage: https://yyv.me/
+github: https://github.com/5iux/sou
+Date: 2019-07-26
+All rights reserved, please do not delete
 ❶❷❸❹❺❻❼❽❾❿
-由 yeetime 修改
-github：https://github.com/yeetime/sou2
-日期：2019-12-13
-Modified by Holger Huo
-https://blog.holger.net.cn/
-Apr.11 2020
+Modified by yeetime
+github: https://github.com/yeetime/sou2
+Date: 2019-12-13
+Modified by Junhao
+https://junhaosong.com
+https://github.com/Rqcker/search
+30th.Apr.2021
 -->
 </body>
 </html>
