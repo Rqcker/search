@@ -1,21 +1,22 @@
 /*
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
+Author: D. Young
+Homepage: https://yyv.me/
+github: https://github.com/5iux/sou
+Date: 2019-07-26
+All rights reserved, please do not delete
 ❶❷❸❹❺❻❼❽❾❿
-由 yeetime 修改
-github：https://github.com/yeetime/sou2
-日期：2019-12-13
-Modified by Holger Huo
-https://blog.holger.net.cn/
-Apr.11 2020
+Modified by yeetime
+github: https://github.com/yeetime/sou2
+Date: 2019-12-13
+Modified by Junhao
+https://junhaosong.com
+https://github.com/rqcker
+1st.May.2021
 */
 
 $(document).ready(function() {
 
-    //搜索引擎列表【预设】
+    //Search engine list [preset]
     var se_list_preinstall = {
         '1':{
             id      :1,
@@ -39,71 +40,15 @@ $(document).ready(function() {
             name    :"q",
             img     :"./static/icon/bing.ico",
         },
-        '4':{
-            id      :4,
-            title   :"多吉",
-            url     :"https://www.dogedoge.com/results",
-            name    :"q",
-            img     :"./static/icon/doge_ico.png",
-        },
-        '5':{
-            id      :5,
-            title   :"秘迹",
-            url     :"https://mijisou.com",
-            name    :"q",
-            img     :"./static/icon/mijisou.png",
-        },
-        '6':{
-            id      :6,
-            title   :"seeres*",
-            url     :"https://seeres.com/search",
-            name    :"q",
-            img     :"./static/icon/seeres.png",
-        },
     };
 
-    //主页快捷方式【预设】
-    var quick_list_preinstall = {
-        '1':{
-            title   :"Blog",
-            url     :"https://blog.holger.net.cn/",
-            img     :"https://i.holger.net.cn/static/images/avatar-300x300.webp",
-            explain :"Holger's Blog",
-        },
-        '2':{
-            title   :"SNS",
-            url     :"https://sns.holger.net.cn",
-            img     :"https://sns.holger.net.cn/favicon.ico",
-            explain :"Notre Monde",
-
-        },
-        '3':{
-            title   :"V2EX",
-            url     :"https://www.v2ex.com/",
-            img     :"./static/icon/v2ex.png",
-            explain :"V2EX",
-        },
-        '4':{
-            title   :"Steam",
-            url     :"https://store.steampowered.com/",
-            img     :"./static/icon/steam.ico",
-            explain :"Steam",
-        },
-        '5':{
-            title   :"GitHub",
-            url     :"https://github.com/",
-            img     :"./static/icon/github.ico",
-            explain :"GitHub",
-        },
-    };
-
-    //搜索框数据加载
+    //Search box data loading
     searchData();
 
-    //快捷方式数据加载
+    //Shortcut data loading
     quickData();
 
-    //判断窗口大小，添加输入框自动完成
+    //Judge the size of the window, add the input box automatically
     var wid = $("body").width();
     if (wid < 640) {
         $(".wd").attr('autocomplete', 'off');
@@ -111,12 +56,12 @@ $(document).ready(function() {
         $(".wd").focus();
     }
 
-    //设置内容加载
-    setSeInit();//搜索引擎设置
-    setQuickInit();//快捷方式设置
+    //Set content loading
+    setSeInit();//Search engine settings
+    setQuickInit();//Shortcut settings
 
 
-    //获取搜索引擎列表
+    //Get a list of search engines
     function getSeList() {
         var se_list_local = Cookies.get('se_list');
         if (se_list_local !== "{}"&&se_list_local) {
@@ -127,7 +72,7 @@ $(document).ready(function() {
         }
     }
 
-    //设置搜索引擎列表
+    //Set search engine list
     function setSeList (se_list) {
         if(se_list){
            Cookies.set('se_list', se_list, { expires: 36500 });
@@ -136,7 +81,7 @@ $(document).ready(function() {
         return false;
     }
 
-    //选择搜索引擎点击事件
+    //Select search engine click event
     $(document).on('click',function(e){
         if($(".search-engine").is(":hidden") && $(".se").is(e.target)){
             if ($(".se").is(e.target)) {
@@ -150,7 +95,7 @@ $(document).ready(function() {
         }
     });
 
-    //搜索引擎列表点击
+    //Search engine list click
     $(".search-engine-list").on("click",".se-li",function(){
         var url = $(this).attr('url');
         var name = $(this).attr('name');
@@ -161,7 +106,7 @@ $(document).ready(function() {
         $(".search-engine").hide();
     });
 
-    //菜单点击
+    //Menu click
     $("#menu").click(function(event) {
         $(this).toggleClass('on');
         $(".side").toggleClass('closed');
@@ -171,26 +116,26 @@ $(document).ready(function() {
         $(".side").addClass('closed');
     });
 
-    // 侧栏标签卡切换
+    // Sidebar tab card switching
     $(".side").rTabs({
         bind: 'click',
         animation: 'left'
     });
 
-    //修改默认搜索引擎
+    //Modify the default search engine
     $(".se_list_table").on("click",".set_se_default",function(){
         var name = $(this).val();
         Cookies.set('se_default', name, { expires: 36500 });
         setSeInit();
     });
 
-    //获得默认搜索引擎
+    //Get the default search engine
     function getSeDefault(){
         var se_default = Cookies.get('se_default');
         return se_default?se_default:1;
     }
 
-    //搜索框数据加载
+    //Search box data loading
     function searchData() {
         var se_default =getSeDefault();
         var se_list = getSeList();
@@ -203,7 +148,7 @@ $(document).ready(function() {
 
     }
 
-    //搜索引擎列表加载
+    //Search engine list loading
     function seList() {
         var html = "";
         var se_list = getSeList();
@@ -213,7 +158,7 @@ $(document).ready(function() {
         $(".search-engine-list").html(html);
     }
 
-    //设置-搜索引擎列表加载
+    //Settings-search engine list loading
     function setSeInit () {
         var se_default = getSeDefault();
         var se_list  = getSeList();
@@ -229,13 +174,13 @@ $(document).ready(function() {
         $(".se_list_table").html(html);
     }
 
-    //搜索引擎添加
+    //Search engine added
     $(".set_se_list_add").click(function () {
         $(".se_add_content input").val("");
         $(".se_add_content").show();
     });
 
-    //搜索引擎保存
+    //Search engine save
     $(".se_add_save").click(function () {
         var key_inhere = $(".se_add_content input[name='key_inhere']").val();
         var key = $(".se_add_content input[name='key']").val();
@@ -273,12 +218,12 @@ $(document).ready(function() {
 
     });
 
-    //关闭表单
+    //Close form
     $(".se_add_cancel").click(function () {
         $(".se_add_content").hide();
     });
 
-    //搜索引擎修改
+    //Search engine modification
     $(".se_list").on("click",".edit_se",function(){
 
         var se_list = getSeList();
@@ -293,7 +238,7 @@ $(document).ready(function() {
         $(".se_add_content").show();
     });
 
-    //搜索引擎删除
+    //Search engine removal
     $(".se_list").on("click",".delete_se",function(){
         var se_default = getSeDefault();
         var key = $(this).val();
@@ -310,7 +255,7 @@ $(document).ready(function() {
         }
     });
 
-    //恢复预设搜索引擎
+    //Restore default search engine
     $(".set_se_list_preinstall").click(function () {
          var r=confirm("Current settings will be removed! (You'd better backup before performing this)");
          if (r) {
@@ -320,7 +265,7 @@ $(document).ready(function() {
          }
     });
 
-    //获取快捷方式列表
+    //Get a list of shortcuts
     function getQuickList() {
         var quick_list_local = Cookies.get('quick_list');
         if (quick_list_local !== "{}" && quick_list_local) {
@@ -331,7 +276,7 @@ $(document).ready(function() {
         }
     }
 
-    //设置快捷方式列表
+    //Set shortcut list
     function setQuickList(quick_list) {
         if(quick_list){
            Cookies.set('quick_list', quick_list, {expires: 36500});
@@ -340,7 +285,7 @@ $(document).ready(function() {
         return false;
     }
 
-    //快捷方式数据加载
+    //Shortcut data loading
     function quickData() {
         var html = "";
         var quick_list = getQuickList();
@@ -355,7 +300,7 @@ $(document).ready(function() {
         $(".quick-ul").html(html);
     }
 
-    //设置-快捷方式加载
+    //Settings-shortcut loading
     function setQuickInit () {
 
         var quick_list  = getQuickList();
@@ -375,13 +320,11 @@ $(document).ready(function() {
         $(".quick_list_table").html(html);
     }
 
-    //设置-快捷方式添加
     $(".set_quick_list_add").click(function () {
         $(".quick_add_content input").val("");
         $(".quick_add_content").show();
     });
 
-    //设置-快捷方式保存
     $(".quick_add_save").click(function () {
         var key_inhere = $(".quick_add_content input[name='key_inhere']").val();
         var key = $(".quick_add_content input[name='key']").val();
@@ -416,12 +359,10 @@ $(document).ready(function() {
         $(".quick_add_content").hide();
     });
 
-    //设置-快捷方式关闭添加表单
     $(".quick_add_cancel").click(function () {
         $(".quick_add_content").hide();
     });
 
-    //恢复预设快捷方式
     $(".set_quick_list_preinstall").click(function () {
          var r=confirm("Current settings will be removed! (You'd better backup before performing this)");
          if (r) {
@@ -430,7 +371,6 @@ $(document).ready(function() {
          }
     });
 
-    //快捷方式修改
     $(".quick_list").on("click",".edit_quick",function(){
 
         var quick_list = getQuickList();
@@ -444,7 +384,6 @@ $(document).ready(function() {
         $(".quick_add_content").show();
     });
 
-    //快捷方式删除
     $(".quick_list").on("click",".delete_quick",function(){
 
         var key = $(this).val();
@@ -458,7 +397,6 @@ $(document).ready(function() {
         }
     });
 
-    //我的数据导出
     $("#my_data_out").click(function () {
         var se = getSeList();
         var se_default = getSeDefault();
@@ -469,11 +407,10 @@ $(document).ready(function() {
         $("#data_txt").val(json);
     });
 
-    //我的数据导入
     $("#my_data_in").click(function () {
         var json = $("#data_txt").val();
 
-        //json 格式校验
+        //json
         try {
             var mydata = JSON.parse(json);
         } catch (e) {
