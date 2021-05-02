@@ -28,17 +28,27 @@ $(document).ready(function() {
         },
         '2':{
             id      :2,
-            title   :"百度",
+            title   :"Baidu",
             url     :"https://www.baidu.com/s",
             name    :"wd",
             img     :"./static/icon/baidu.ico",
         },
         '3':{
             id      :3,
-            title   :"Bing CN",
+            title   :"Bing",
             url     :"https://cn.bing.com/search",
             name    :"q",
             img     :"./static/icon/bing.ico",
+        },
+    };
+
+    //Home page shortcut[default]
+    var quick_list_preinstall = {
+        '1':{
+            title   :"Blog",
+            url     :"https://junhaosong.com",
+            img     :"https://junhaosong.com/static/images/avatar-300x300.webp",
+            explain :"Junhao's Blog",
         },
     };
 
