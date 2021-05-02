@@ -47,7 +47,7 @@ $(document).ready(function() {
         '1':{
             title   :"Blog",
             url     :"https://junhaosong.com",
-            img     :"https://junhaosong.com/static/images/avatar-300x300.webp",
+            img     :"https://junhaosong.com/search/static/images/avatar-300x300.webp",
             explain :"Junhao's Blog",
         },
     };
