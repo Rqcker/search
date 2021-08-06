@@ -3,19 +3,19 @@
 
 	$.fn.rTabs = function(options){
 
-		//默认值
+		// Defaults
 		var defaultVal = {
-			btnClass:'.j-tab-nav',	/*按钮的父级Class*/
-			conClass:'.j-tab-con',	/*内容的父级Class*/
-			bind:'hover',	/*事件参数 click,hover*/
-			animation:'0',	/*动画方向 left,up,fadein,0 为无动画*/
-			speed:300, 	/*动画运动速度*/
-			delay:200,	/*Tab延迟速度*/
-			auto:false,	/*是否开启自动运行 true,false*/
-			autoSpeed:3000	/*自动运行速度*/
+			btnClass:'.j-tab-nav',	/*The parent Class of the button*/
+			conClass:'.j-tab-con',	/*The parent class of the content*/
+			bind:'hover',	/*Event parameter click,hover*/
+			animation:'0',	/*Animation direction left,up,fadein,0 No animation*/
+			speed:300, 	/*Animation movement speed*/
+			delay:200,	/*Tab delay speed*/
+			auto:false,	/*Whether to turn on automatic operation true,false*/
+			autoSpeed:3000	/*Automatic running speed*/
 		};
 
-		//全局变量
+		// Global variable
 		var obj = $.extend(defaultVal, options),
 			evt = obj.bind,
 			btn = $(this).find(obj.btnClass),
@@ -31,7 +31,7 @@
 
 		return this.each(function(){
 
-			//判断动画方向
+			// Determine the direction of the animation
 			function judgeAnim(){
 				var w = i * conWidth,
 					h = i * conHeight;
@@ -52,7 +52,7 @@
 				}
 			}
 
-			//判断事件类型
+			// Determine the type of event
 			if(evt == "hover"){
 				btn.children().hover(function(){
 					var j = $(this).index();
@@ -71,7 +71,7 @@
 				})
 			}
 
-			//自动运行
+			// automatic running
 			function startRun(){
 				t = setInterval(function(){
 					i++;
@@ -89,7 +89,7 @@
 				},obj.autoSpeed)
 			}
 
-			//如果自动运行开启，调用自动运行函数
+			// If autorun is on，call autorun function
 			if(obj.auto){
 				$(this).hover(function(){
 					clearInterval(t);
